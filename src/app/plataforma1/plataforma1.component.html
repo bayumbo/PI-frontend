@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,200" />
+    <title>Document</title>
+</head>
+<header class="main-header">
+    <label for="btn-nav" class="btn-nav"><i class="fas fa-bars">
+      <span class="material-symbols-outlined">
+        widgets
+        </span>
+    </i></label>
+    <input type="checkbox" id="btn-nav">
+    <nav>
+      <ul class="navigation">
+        <li><a href="">Home</a></li>
+        <li><a href="">Servicios</a></li>
+        <li><a href="">Nosotros</a></li>
+        <li><a href="">Contacto</a></li>
+      </ul>
+    </nav>
+    
+</header>
+<body>
+    <div class="container">
+        <h1>Listado de Posts</h1>
+        <div class="form-group">
+            <input type="text" class="forms-control" placeholder="Buscar.." [(ngModel)]="filterpost" name="filterpost"/>
+        </div>
+      </div>
+      <div class="container">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>TITULO</th>
+              <th>FECHA</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let post of posts | filter: filterpost">
+            <td>{{ post.id }}</td>
+              <td>{{ post.titulo }}</td>
+              <td>{{ post.fecha }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+</body>
+</html>
