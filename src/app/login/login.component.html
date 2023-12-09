@@ -1,46 +1,25 @@
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
+<html>
 <body>
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-    <div>
-      <label>Email</label>
-      <input type="email" formControlName="email">
-      <div *ngIf="loginForm.get('email')">Email es requerido</div>
-      <div *ngIf="loginForm.get('email')">Ingrese un email válido</div>
-    </div>
-    <div>
-      <label>Contraseña</label>
-      <input type="password" formControlName="password">
-      <div *ngIf="loginForm.get('password')">Contraseña es requerida</div>
-    </div>
-    <button type="submit" [disabled]="loginForm.invalid">Iniciar Sesión</button>
-  </form>
-  
-  <!--
   <div class="seccion3">
     <div class="texto-boton3">
       <img src="../../assets/img/home4.png">
     </div>
     <div class="imagen3">
       <div class="login">
-        <form>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <h1>Login</h1>
             <hr>
             <label>Email</label>
-            <input type="text" placeholder="abc@exampl.com">
+            <input formControlName="email" type="email" placeholder="abc@exampl.com" required>
             <label>Password</label>
-            <input type="password" placeholder="enter your password!">
-            <button>Submit</button>
+            <input formControlName="password" type="password" placeholder="enter your password!" required>
+            <button type="submit" [disabled]="loginForm.invalid">Submit</button>
             <p>
                 <a href="#">Forgot Password?</a>
             </p>
         </form>
     </div>
       </div>
-  </div> -->
+  </div> 
 </body>
 </html>
