@@ -1,7 +1,37 @@
-<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-  <input formControlName="username" class="form-control" placeholder="username" required>
-  <input formControlName="email" type="email"class="form-control" placeholder="email" required>
-  <input formControlName="password" type="password" class="form-control" placeholder="password" required>
 
-  <button type="submit" [disabled]="registerForm.invalid">Registrarse</button>
-</form>
+
+  <body>
+  <div class="contenido" >
+    <div class="card1">
+      <img src="../../assets/img/home-1.png">
+    </div>
+  
+    <div class="card2">
+      <div class="formulario">
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        
+        <div>
+        <div class="title">
+          <h2>REGISTRO</h2>
+        </div>
+        <hr>
+        <small *ngIf="userNoValido" class="text-danger">Ingrese un nombre de usuario con mínimo 2 caracteres y máximo 15</small>
+        <input  type="text" id="form3Example1" class="form-control"  formControlName="username" [class.is-invalid]="userNoValido"/>
+        <label class="form-label" for="form3Example1">User name</label>
+        </div>
+        <div>
+        <small *ngIf="emailNoValido" class="text-danger">Ingrese un email válido</small>
+        <input type="email" id="form3Example3" class="form-control" formControlName="email" [class.is-invalid]="emailNoValido"/>
+        <label class="form-label" for="form3Example3">Email address</label>
+        </div>
+        <div>
+        <small *ngIf="passwordNoValido" class="text-danger">Ingrese una contraseña con mínimo 8 caracteres y máximo 11</small>
+        <input type="password" id="form3Example4" class="form-control" formControlName="password" [class.is-invalid]="passwordNoValido"/>
+        <label class="form-label" for="form3Example4">Password</label>
+        </div>
+        <button type="submit" [disabled]="registerForm.invalid" class="btn btn-dark" onclick="location.href='../login'">Registrarse</button>
+      </form>
+    </div>
+    </div>
+</div>
+</body>

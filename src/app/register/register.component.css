@@ -1,0 +1,109 @@
+*{
+    font-family: 'Comfortaa', sans-serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+}
+.contenido {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    
+  }
+  img{
+    width: 80%;
+}
+.card1 {
+    box-sizing: border-box;
+    width: calc(50% );
+    padding: 100px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #c1c6a1;
+    font-family: 'Comfortaa', sans-serif;	
+    transition: width 0.3s ease;
+  }
+  @media (max-width: 1080px) {
+    .card1 {
+      width: 100%; /* Cambia el ancho a 100% en pantallas más pequeñas */
+    }
+  }
+  .card2 {
+    box-sizing: border-box;
+    width: calc(50% );
+    padding: 160px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ECE3CE;
+    font-family: 'Comfortaa', sans-serif;
+  }
+  @media (max-width: 1080px) {
+    .card1, .card2 {
+      width: 100%; 
+    }
+  }
+form{
+    margin: 10%;
+    
+}
+.formulario{
+    width: 80% ;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -80px;  
+    border: 1px solid;
+    border-radius: 10px;
+    border-color: antiquewhite;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+.title{
+    width: 100%;
+    margin: auto;
+    text-transform: uppercase;
+    text-align: center;
+}
+p{
+    text-align: center;
+    margin: 10px;
+}
+hr{
+    background: rgb(84, 57, 32);
+}
+
+
+input{
+    width: 100%;
+    margin: 2px;
+    border: none;
+    outline: none;
+    padding: 8px;
+    border-bottom: 1px solid gray;
+    background-color: transparent;
+}
+button{
+    border: none;
+    outline: none;
+    padding: 8px;
+    width: 100%;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 5px;
+    background: rgb(130, 94, 63);
+    margin: auto;
+}
+button:hover{
+    background: rgb(84, 57, 32);
+}
+p{
+    margin: 20px;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+  
