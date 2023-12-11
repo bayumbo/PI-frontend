@@ -10,16 +10,30 @@
             <h1>Login</h1>
             <hr>
             <label>Email</label>
-            <input formControlName="email" type="email" placeholder="abc@exampl.com" required>
+            <input formControlName="email" type="email" placeholder="abc@exampl.com" required [class.is-invalid]="emailNoValido">
+            <small *ngIf="emailNoValido" class="text-danger">Ingrese un email válido</small>
             <label>Password</label>
-            <input formControlName="password" type="password" placeholder="enter your password!" required>
+            <input formControlName="password" type="password" placeholder="enter your password!" required [class.is-invalid]="passwordNoValido">
+            <small *ngIf="passwordNoValido" class="text-danger">Ingrese una contraseña con mínimo 8 caracteres y máximo 11</small>
             <button type="submit" [disabled]="loginForm.invalid">Submit</button>
             <p>
                 <a href="#">Forgot Password?</a>
             </p>
         </form>
+
+   <!--     <hr>
+                <h3 class="mt-5">Formulario</h3>
+                <pre>Estado Formulario:{{loginForm.valid}}
+                <br>
+                Status:{{loginForm.status}}
+              </pre>
+              <pre>
+                {{loginForm.value | json}}
+              </pre>
+    -->
     </div>
       </div>
   </div> 
 </body>
 </html>
+
