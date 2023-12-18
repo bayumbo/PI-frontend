@@ -16,17 +16,17 @@
         </div>
         <hr>
         <small *ngIf="userNoValido" class="text-danger">Ingrese un nombre de usuario con mínimo 2 caracteres y máximo 15</small>
-        <input  type="text" id="form3Example1" class="form-control"  formControlName="username" [class.is-invalid]="userNoValido"/>
+        <input  type="text" id="form3Example1" class="form-control" [(ngModel)]="datosFormulario.username" formControlName="username" [class.is-invalid]="userNoValido"/>
         <label class="form-label" for="form3Example1">User name</label>
         </div>
         <div>
         <small *ngIf="emailNoValido" class="text-danger">Ingrese un email válido</small>
-        <input type="email" id="form3Example3" class="form-control"  formControlName="email" [class.is-invalid]="emailNoValido"/>
+        <input type="email" id="form3Example3" class="form-control" [(ngModel)]="datosFormulario.email" formControlName="email" [class.is-invalid]="emailNoValido"/>
         <label class="form-label" for="form3Example3">Email address</label>
         </div>
         <div>
         <small *ngIf="passwordNoValido" class="text-danger">Ingrese una contraseña con mínimo 8 caracteres y máximo 11</small>
-        <input type="password" id="form3Example4" class="form-control"  formControlName="password" [class.is-invalid]="passwordNoValido"/>
+        <input type="password" id="form3Example4" class="form-control" [(ngModel)]="datosFormulario.password" formControlName="password" [class.is-invalid]="passwordNoValido"/>
         <label class="form-label" for="form3Example4">Password</label>
         </div>
         <button (click)="saveUser()"  type="submit" [disabled]="registerForm.invalid" class="btn btn-dark"  >Registrarse</button>
